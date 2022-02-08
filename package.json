@@ -1,0 +1,51 @@
+{
+  "name": "imageprocessingapi",
+  "version": "1.0.0",
+  "description": "image processing project",
+  "main": "index.js",
+  "scripts": {
+    "jasmine": "jasmine",
+    "build": "npx tsc",
+    "start": "nodemon ./src/index.ts",
+    "test": "npx tsc && jasmine",
+    "prod": "npx tsc && nodemon dest/index.js",
+    "clean": "rimraf dest/",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "lint": "eslint . --ext .ts",
+    "cpimages": "copyfiles -f src/images/* dest/images && copyfiles -f src/thumbnails/* dest/thumbnails/",
+    "build:copy": "npm run build && npm run cpimages"
+  },
+  "author": "Doaa",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "jimp": "^0.16.1",
+    "sharp": "^0.29.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jasmine": "^3.10.2",
+    "@types/node": "^16.11.12",
+    "@types/sharp": "^0.29.4",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "express-validator": "^6.14.0",
+    "jasmine": "^3.10.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "supertest": "^6.1.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
